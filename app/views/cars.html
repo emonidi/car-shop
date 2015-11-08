@@ -1,0 +1,64 @@
+<div class="container cars">
+  <div class="col-md-8 col-md-push-2">
+    <div class="panel pane-info car">
+      <div class="panel-body">
+        <div class="col-md-4">
+          <span>Филтър:<span>
+        </div>
+        <div class="col-md-4">
+          <select ng-model="filter" ng-change="filterCars()" class="form-control" ng-show="allCars">
+            <option value="all">Всички</option>
+            <option value="in_stock">Има в наличност</option>
+            <option value="not_in_stock">Нямa в наличност</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="car panel panel-info" ng-repeat="car in cars">
+      <div class="panel-heading">
+        <h4><a ng-href="#/cars/{{car.$id}}">{{car.brand}} {{car.model}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <image src="{{car.image}}"/>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <strong>Дата на производтство:</strong>
+              </div>
+              <div class="col-md-6">
+                {{convertDate(car.production_date)}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <strong>В наличност:</strong>
+              </div>
+              <div class="col-md-6">
+                {{car.in_stock ? "Да" : "Не"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <strong>Регистрационнен номер:</strong>
+              </div>
+              <div class="col-md-6">
+                {{car.licence_plate}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <strong>Локация:</strong>
+              </div>
+              <div class="col-md-6">
+                {{car.location}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

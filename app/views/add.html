@@ -1,0 +1,63 @@
+<div class="container cars">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h2>Добавяне на кола</h2>
+        </div>
+        <div class="panel-body">
+          <form clas="form" ng-submit="submit()" name="add" novalidate="true">
+            <div image-field model='image'></div>
+            <div class="form-group">
+              <label for="brand">Марка</label>
+              <input type="text" name="brand" ng-model="Model.brand" id="brand" class="form-control" required=""/>
+              <div class="error" ng-show="add.$submitted || add.brand.$touched">
+                <span class="text-danger" ng-show="add.brand.$error.required">Задължително поле</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="model">Модел</label>
+              <input type="text" name="model" ng-model="Model.model" id="model" class="form-control" required=""/>
+              <div class="error" ng-show="add.$submitted || add.model.$touched">
+                <span class="text-danger" ng-show="add.model.$error.required">Задължително поле</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="production_date">Дата на производство</label>
+              <input type="date" name="production_date" ng-model="production_date" id="production_date" class="form-control" required/>
+              <div class="error" ng-show="add.$submitted || add.production_date.$touched">
+                <span class="text-danger" ng-show="add.production_date.$error.required">Задължително поле</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="Model.in_stock"><span class="checkbox-material"><span class="check"></span></span>
+                  <span>В наличност</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="licence_plate">Регистрационен номер</label>
+              <input type="text" id="licence_plate" ng-model="Model.licence_plate" name="licence_plate" class="form-control" required="" ng-pattern="/[А-Я]{1,2}[\s]{1}[0-9]{4}[\s][А-Я]{2}/"/>
+              <div class="error" ng-show="add.$submitted || add.licence_plate.$touched">
+                <span class="text-danger" ng-show="add.licence_plate.$error.required">Задължително поле</span>
+                <span class="text-danger" ng-show="add.licence_plate.$error.pattern">Невалиден номер. Номерът трябва да е като "СА 1212 АС" или "А 1212 ВТ"</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Локация</label>
+              <input type="text" name="location" id="location" ng-autocomplete ng-model="Model.location" options="{country:'bg'}" details="details" class="form-control" required=""/>
+              <div class="error" ng-show="add.$submitted || add.location.$touched">
+                <span class="text-danger" ng-show="add.location.$error.required">Задължително поле</span>
+              </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Запис">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

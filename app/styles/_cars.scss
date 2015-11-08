@@ -1,0 +1,22 @@
+.cars{
+  margin-top: 40px;
+  .car{
+    h4{
+      a{
+        color:#fff;
+        text-decoration: none;
+      }
+    }
+    img{
+      width:100%;
+    }
+
+    span{
+      line-height: 25px;
+    }
+  }
+  .angular-google-map-container {
+    height: 250px;
+    margin:0;
+  }
+}

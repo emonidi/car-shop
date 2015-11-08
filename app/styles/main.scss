@@ -1,0 +1,24 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "cars";
+
+.header{
+  .navbar{
+    margin: 0;
+  }
+}
+.jumbotron{
+  max-height: 350px;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0;
+  overflow: hidden;
+
+  box-shadow: none !important;
+  border-bottom: 3px solid #ebebeb;
+  img{
+    width: 100% !important;
+    margin-top: -630px;
+  }
+}

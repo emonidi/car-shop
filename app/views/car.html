@@ -1,0 +1,56 @@
+<div class="container cars">
+  <div class="col-md-8 col-md-push-2">
+     <div class="panel panel-info car">
+        <div class="panel-heading">
+          <h2>{{car.brand}} {{car.model}}<h2>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <img src="{{car.image}}"/>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+            </div>
+            <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <span><strong>Марка:</strong></span>
+                <span>{{car.brand}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <span><strong>Модел:</strong></span>
+                <span>{{car.model}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <span><strong>Дата на производство:</strong></span>
+                <span>{{convertDate(car.production_date)}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <span><strong>В наличност:</strong></span>
+                <span>{{car.in_stock? "Да" : "Не"}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <a href="" class="btn btn-primary">Редакция</a>
+          </div>
+          <div class="col-md-3 text-center">
+            <a href="" class="btn btn-danger">Изтриване</a>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>
