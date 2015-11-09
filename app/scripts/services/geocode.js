@@ -13,14 +13,14 @@ angular.module('carshopApp')
         var deferred = $q.defer();
        return function(address){
           var coords = null;
-          $http.get('http://maps.googleapis.com/maps/api/geocode/json?address='+address)
+          $http.get('//maps.googleapis.com/maps/api/geocode/json?address='+address)
              .success(function(data){
-               coords = data.results[0].geometry.location
+               coords = data.results[0].geometry.location;
                deferred.resolve(coords);
 
              });
 
-         return deferred.promise
-      }
-      }
+         return deferred.promise;
+      };
+      };
   });
